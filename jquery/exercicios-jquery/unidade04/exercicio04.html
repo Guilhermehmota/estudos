@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title> 
+        
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+			$(function(e) {
+                //excluir elementos, basta especificar o elemento que quer excluir
+				$("li:first").remove()
+                //alterar conteúdo de um elemento
+                $("li:last").replaceWith("<li>Curso Bootstrap</li>")
+                //embrulhar elementos
+                $("ul").wrapAll("<div style='border: 1px solid grey'></div>")
+
+			})
+		</script>        
+    </head>
+
+    <body>
+    	
+      
+		<ul>
+        		
+            <li>Curso HTML5 Essencial</li>
+            <li>Curso CSS3 Essencial</li>
+            <li>Curso Javascript Essencial</li>
+            <li>Curso jQuery Fundamental</li>
+        </ul>
+        
+    </body>
+
+</html>

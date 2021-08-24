@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title> 
+    </head>
+
+    <body>
+    	<nav>
+        	<a href="#">Brasil</a>
+            <a href="#">Argentina</a>
+            <a href="#">Uruguai</a>
+            <a href="#">Chile</a>
+        </nav>
+        
+		<!-- scripts -->
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>    
+        // nesse caso estou mostrando com alerta quantos elementos "a" tem dentro do "nav"
+            // alert("Essa página contém " + $("nav a").length + " links");
+        //mudar o css dos elementos "a" dentro do "nav". posso tbm colocar outras propriedades tipo ":first"
+            $(function() {
+                $("nav a").css("color", "red").css("text-decoration", "none")
+            })
+        </script>   
+                
+    </body>
+</html>
