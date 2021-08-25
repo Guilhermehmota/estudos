@@ -25,14 +25,51 @@
 			
 			nav li:first-child 	{ background-image:url(imagem/futebol.png) } 
 			nav li:nth-child(2) { background-image:url(imagem/basquete.png) }
-					
+			nav li:nth-child(3) { background-image:url(imagem/tenis.png) }
+			
+			#primeira {width: 100%; height: 800px; background-color: aquamarine;}
+			#segunda {width: 100%; height: 800px; background-color: blueviolet;}
+			#terceira {width: 100%; height: 800px; background-color: brown;}
+
         </style>
          
         <script src="jquery-3.2.1.min.js"></script>
-        <script>		
-			$( function(e) { 	
+        <script>
+		//fazendo movimentação do scroll com o evento click click
+		//dentro do scrollTop eu coloco o número de pixels que serão movimentados		
+			// $( function(e) { 	
+			// 	$("nav li:nth-child(2)").click(function(e) {
+			// 		$("html, body").animate({scrollTop: 500}, 1000)
+			// 	})
+			// });	
+			
+		//como fazer de uma maneira mais universal, para qualquer tela e sem precisar saber o tamanho do elemento
+		$( function(e) { 	
 
-			});			
+			//ajustando altura dos elementos independente do tamanho da tela do usuário
+			function redimencionar () {
+				var alturaJanela = $(window).heigt();
+				$("#primeira").css("height", alturaJanela)
+				$("#segunda").css("height", alturaJanela)
+				$("#terceira").css("height", alturaJanela)
+			}
+
+			$("nav li:nth-child(1)").click(function(e) {
+					$("html, body").animate({scrollTop:$("#primeira").offset().top}, 1000)
+				})
+				$("nav li:nth-child(2)").click(function(e) {
+					$("html, body").animate({scrollTop:$("#segunda").offset().top}, 1000)
+				})
+				$("nav li:nth-child(3)").click(function(e) {
+					$("html, body").animate({scrollTop:$("#terceira").offset().top}, 1000)
+				})
+			});	
+			//evento para redimencionar a janela,chamo a função redimencionar também dentro dele
+			$(window).resize(function(e) {
+				redimencionar()
+			})
+
+			redimencionar()
 		</script>   
     </head>
     <body>
@@ -40,7 +77,13 @@
         	<ul>
             	<li id="tela1"></li>
             	<li id="tela2"></li>
+				<li id="tela3"></li>
             </ul>
         </nav>
+
+		<div id="primeira"></div>
+		<div id="segunda"></div>
+		<div id="terceira"></div>
+
     </body>
 </html>
